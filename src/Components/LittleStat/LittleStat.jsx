@@ -1,12 +1,16 @@
-import React, { Component } from 'react'
+/* eslint-disable react/prop-types */
 
-export default class LittleStat extends Component {
-  render() {
-    return (
-      <div className="little-stat-container" id={this.props.string}>
-        <span>{this.props.type}</span>
-        <span>{this.props.string}</span>
-      </div>
-    )
-  }
+// React Imports
+import React from 'react'
+
+export default function LittleStat(props) {
+  // Deconstructing `props`
+  const { string, type } = props
+
+  return (
+    <div className="little-stat-container" id={string}>
+      <span>{type}</span>
+      <span>{string}</span>
+    </div>
+  )
 }

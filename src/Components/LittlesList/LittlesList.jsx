@@ -1,16 +1,24 @@
+/* eslint-disable react/prop-types */
+
+// React Imports
 import React, { Component } from 'react'
 
-// Components
+// Component Imports
 import LittleItem from '../LittleItem/LittleItem'
 
 export default class LittlesList extends Component {
   render() {
-    // Deconstructing
+    // Deconstructing `this.props`
     const { littles } = this.props
-    
+
+    // If startup flow hasn't completed cycle...
+    if (littles === undefined) {
+      return 'waiting...'
+    }
+
     return (
       <div id="littles-list-container">
-        {littles.map((little, index) => <LittleItem little={little} key={index} />)}
+        {littles.map((little) => <LittleItem little={little} key={little.text.split(' ')[0]} />)}
       </div>
     )
   }

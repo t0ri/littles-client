@@ -1,13 +1,16 @@
-import React, { Component } from 'react'
+// React Imports
+import React from 'react'
+
+// Style Imports
 import './heading.scss'
 
-export default class Heading extends Component {
-  render() {
-    return (
-      <div id="heading-container">
-        <span>littles</span>
-        <div id="user-modal"></div>
-      </div>
-    )
-  }
+export default function Heading() {
+  return (
+    <div id="heading-container">
+      {/* Logo */}
+      <span>littles</span>
+      {/* Logout / Delete Data */}
+      <div id="user-modal" />
+    </div>
+  )
 }
