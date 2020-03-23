@@ -24,6 +24,8 @@ export default class App extends Component {
       newLittle: '',
     }
 
+    this.user = 'User'
+
 
     // Binding `this` to methods
     this.newLittleModalStateControl = this.newLittleModalStateControl.bind(this)
@@ -85,7 +87,7 @@ export default class App extends Component {
     this.setState({ timeFrame: e.target.id })
 
     // Update `this.state.littles` using current `this.state.timeFrame`
-    this.getLittlesInTimeFrame()
+    setTimeout(() => this.getLittlesInTimeFrame(), 100)
   }
 
 
@@ -194,7 +196,12 @@ export default class App extends Component {
 
               {/* Welcome Message */}
               <div id="welcome-container">
-                <h1>Hi Josie,</h1>
+                <h1>
+                  Hi
+                  {' '}
+                  {this.user}
+                  ,
+                </h1>
                 <h1>{this.createWelcomeMessage()}</h1>
               </div>
 
