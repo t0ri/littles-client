@@ -3,29 +3,36 @@
 div#littles-list-container {
   height: 85vh;
   width: 35vw;
-  
-  @include flexbox();
-  @include flex-flow(column nowrap);
-  @include align-items(center);
-  
+
   margin-right: 5vh;
-  padding-bottom: 1vh;
-  padding-top: 1vh;
+  padding: 1vh 0 1vh 0;
   
   border-radius: 30px;
   background-color: $color-card-background;
   @include box-shadow(0px 5px 8px 5px);
   
-  overflow: scroll;
-  overflow-x: hidden;
+  div#littles-list {
+    height: 94%;
+    width: 100%;
 
-  &::-webkit-scrollbar {
-    -webkit-appearance: none;
-    width: 10px;
-  }
+    margin-top: 2.5vh;
+    padding-bottom: 1vh;
+
+    @include flexbox();
+    @include flex-flow(column nowrap);
+    @include align-items(center);
+
+    overflow: scroll;
+    overflow-x: hidden;
   
-  &::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, .1);
-    border-radius: 30px;
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, .15);
+      border-radius: 50px;
+    }
   }
+
 }

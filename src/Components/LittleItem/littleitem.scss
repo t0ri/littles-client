@@ -2,9 +2,9 @@
 
 .little-item {
   height: 3em;
-  width: 32.5vw;
+  width: 32vw;
 
-  margin-top: 1.25vh;
+  margin-top: 1.3vh;
 
   @include flexbox();
   @include flex-flow(row nowrap);

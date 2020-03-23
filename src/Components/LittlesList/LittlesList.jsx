@@ -19,14 +19,16 @@ export default class LittlesList extends Component {
 
     return (
       <div id="littles-list-container">
-        {littles.map((little, index) => (
-          <LittleItem
-            index={index}
-            del={del}
-            little={little}
-            key={little.text.split(' ').join('-')}
-          />
-        ))}
+        <div id="littles-list">
+          {littles.map((little, index) => (
+            <LittleItem
+              index={index}
+              del={del}
+              little={little}
+              key={little.text.split(' ').join('-')}
+            />
+          ))}
+        </div>
       </div>
     )
   }
