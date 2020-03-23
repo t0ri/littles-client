@@ -1,0 +1,99 @@
+@import './variables.scss';
+
+body {
+  font-family: $font-family;
+  font-size: 16px;
+
+  background-color: $color-background;
+  overflow: hidden;
+
+  div.App {
+
+    div#content-container {
+      height: 90vh;
+      width: 100vw;
+
+      @include flexbox();
+      @include flex-flow(row nowrap);
+      @include justify-content(space-between);
+
+
+      div#content-left {
+        width: 60vw;
+      
+        margin-left: 5vh;
+
+        div#content-top {
+          
+          div#welcome-container {
+            margin-top: 15vh;
+            
+            h1 {
+              font-family: $font-display;
+              color: $color-display-text;
+              font-size: 4em;
+              line-height: .5em;
+            }
+          }
+        }
+
+        div#content-bottom {
+          margin-top: 30vh;
+          width: 80%;
+          
+          @include flexbox();
+          @include flex-flow(row nowrap);
+          @include justify-content(space-around);
+          @include align-items(flex-end);
+
+          button {
+            height: 5.25vh;
+
+            background-color: $color-card-background;
+            border: none;
+            @include box-shadow(0px 2px 5px 2px);
+
+            color: $color-text;
+            font-weight: bold;
+
+            transition: all .2s ease;
+            transform: scale(1);
+
+            &:hover {
+              cursor: pointer;
+            }
+          
+            &.time-frame-btn {
+              width: 10vw;
+              border-radius: 10px;
+              font-size: 1.25em;
+
+              &:hover {
+                transition: all .2s ease;
+                transform:  scale(1.05);
+              }
+            }
+
+            &#new-little-btn {
+              margin-top: .5vh;
+              width: 5.25vh;
+              border-radius: 30px;
+              font-size: 2em;
+
+              &:hover {
+                transition: all .2s ease;
+                background-color: $color-salmon;
+                color: white;
+                transform:  scale(1.15);
+              }
+            }
+          }
+        }
+
+        div#content-right {
+          height: 90vh;
+        }
+      }
+    }
+  }
+}

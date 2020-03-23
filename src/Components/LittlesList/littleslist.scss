@@ -1,0 +1,19 @@
+@import '../../variables.scss';
+
+div#littles-list-container {
+  height: 85vh;
+  width: 35vw;
+  
+  @include flexbox();
+  @include flex-flow(column nowrap);
+  @include align-items(center);
+  
+  margin-right: 5vh;
+  padding-top: 1vh;
+  
+  border-radius: 30px;
+  background-color: $color-card-background;
+  @include box-shadow(0px 4px 8px 5px);
+  
+  overflow: scroll;
+}

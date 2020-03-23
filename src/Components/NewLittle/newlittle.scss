@@ -1,0 +1,137 @@
+@import '../../variables.scss';
+
+div#new-little-container {
+  // Modal Functionality Properties
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  max-width: 100%;
+  max-height: 100%;
+  //
+  
+  height: 55vh;
+  width: 50vw;
+
+  padding: 1%;
+
+  background-color: $color-card-background;
+  border-radius: 30px;
+
+  img {
+    position: absolute;
+
+    height: 20px;
+    width: 20px;
+    
+    top: 30px;
+    right: 35px;
+    
+    cursor: pointer;
+
+    filter: saturate(1) brightness(1.75);
+  }
+
+  h2 {
+    font-family: $font-display;
+    font-size: 2em;
+    color: $color-text;
+    text-align: center;
+  }
+  
+  div {
+    height: 100%;
+    width: 100%;
+
+    @include flexbox();
+    @include flex-flow(column nowrap);
+
+    textarea[type='text'] {
+      resize: none;
+
+      height: 100%;
+      width: 90%;
+      
+      margin-left: 5%;
+      margin-top: 2.5%;
+      
+      font-size: 4em;
+      color: $color-text;
+      text-align: center;
+      
+      border: none;
+
+      &::placeholder {
+        color: lighten($color-text, 30);
+      }
+    }
+
+    div {
+      @include flexbox();
+      @include flex-flow(row nowrap);
+      @include justify-content(space-around);
+      @include align-items(center);
+
+      button.save-little-btn {
+        width: 40%;
+        height: 25%;
+        
+        color: $color-card-background;
+        border-radius: 10px;
+        border: none;
+        
+        font-family: $font-family;
+        font-size: 1.5em;
+
+        &#nerve {
+          background-color: $color-salmon;
+          transition: all .2s ease;
+
+          &:hover {
+            color: darken($color-salmon, 2);
+            font-weight: bold;
+            
+            background-color: white;
+            border: 3px solid $color-salmon;
+            
+            transition: all .2s ease;
+            
+            cursor: pointer;
+          }
+        }
+
+        &#win {
+          background-color: $color-sage;
+          transition: all .2s ease;
+
+          &:hover {
+            color: darken($color-sage, 2);
+            font-weight: bold;
+
+            background-color: white;
+            border: 3px solid $color-sage;
+            
+            transition: all .2s ease;
+            
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+div#new-little-container-overlay {
+  position: fixed;
+  z-index: 1;
+
+  height: 100%;
+  width: 100%;
+
+  top: 0;
+  left: 0;
+
+  background-color: $color-text;
+  opacity: .25;
+}

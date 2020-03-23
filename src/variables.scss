@@ -1,0 +1,73 @@
+// Import Fonts
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Trochut:wght@700&family=Yeseva+One&display=swap');
+
+$font-family: 'Open Sans';
+$font-display: 'Yeseva One';
+$font-logo: 'Trochut';
+
+$color-background: #f4f5f7;
+
+$color-salmon: #FAB8A1;
+$color-sage: #7DAC9A;
+$color-display-text: #6C6B85;
+$color-card-background: #fff;
+$color-text: #6C6B85;
+
+@mixin box-shadow($direction) {
+  -webkit-box-shadow: $direction rgba(0,0,0,0.25); 
+  box-shadow: $direction rgba(0,0,0,0.25);
+}
+
+// Flexbox mixins: https://gist.github.com/richardtorres314/26b18e12958ba418bb37993fdcbfc1bd
+// Flexbox display
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+// Flex Flow Direction
+// - applies to: flex containers
+// row | row-reverse | column | column-reverse
+@mixin flex-direction($direction) {
+  -webkit-flex-direction: $direction;
+     -moz-flex-direction: $direction;
+      -ms-flex-direction: $direction;
+          flex-direction: $direction;
+}
+// Flex Direction and Wrap
+// - applies to: flex containers
+// <flex-direction> || <flex-wrap>
+@mixin flex-flow($flow) {
+  -webkit-flex-flow: $flow;
+     -moz-flex-flow: $flow;
+      -ms-flex-flow: $flow;
+          flex-flow: $flow;
+}
+// Axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | space-between | space-around 
+@mixin justify-content($justify) {
+  -webkit-justify-content: $justify;
+     -moz-justify-content: $justify;
+      -ms-justify-content: $justify;
+          justify-content: $justify;
+            -ms-flex-pack: $justify;
+}
+// Cross-axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | baseline | stretch 
+@mixin align-items($align) {
+  -webkit-align-items: $align;
+     -moz-align-items: $align;
+      -ms-align-items: $align;
+       -ms-flex-align: $align;
+          align-items: $align;
+}
+
+
+body {
+  font-size: 16px;
+  background-color: $color-background;
+}

@@ -1,0 +1,40 @@
+@import '../../variables.scss';
+
+.little-stat-container {
+  height: 15vh;
+  width: 15vh;
+
+  text-align: center;
+
+  background-color: #fff;
+  color: $color-text;
+  border-radius: 30px;
+  clear: both;
+
+  @include box-shadow(0px 2px 5px 2px);
+
+  &#nerves {
+    background-color: $color-salmon;
+    color: $color-card-background;
+  }
+
+  &#wins {
+    background-color: $color-sage;
+    color: $color-card-background;
+  }
+
+  :first-child {
+    font-size: 4.75em;
+    font-weight: bolder;
+
+    margin-bottom: -2vh;
+
+    // stacking <spans>
+    position: relative;
+    display: block;
+  }
+
+  :nth-child(2) {
+    font-size: 2em;
+  }
+}
