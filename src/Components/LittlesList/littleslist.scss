@@ -9,11 +9,23 @@ div#littles-list-container {
   @include align-items(center);
   
   margin-right: 5vh;
+  padding-bottom: 1vh;
   padding-top: 1vh;
   
   border-radius: 30px;
   background-color: $color-card-background;
-  @include box-shadow(0px 4px 8px 5px);
+  @include box-shadow(0px 5px 8px 5px);
   
   overflow: scroll;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 10px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .1);
+    border-radius: 30px;
+  }
 }
