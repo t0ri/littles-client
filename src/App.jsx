@@ -174,7 +174,7 @@ export default class App extends Component {
     // Remove the index passed from <LittleItem />
     littlesTemp.splice(index, 1)
 
-    this.setState({ littles: littlesTemp })
+    setTimeout(() => this.setState({ littles: littlesTemp }), 100)
   }
 
 
