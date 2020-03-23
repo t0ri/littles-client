@@ -122,7 +122,7 @@ export default class App extends Component {
     littles.forEach((little) => littlesTemp.push(little))
 
     // Push new `little` object into temporary object
-    littlesTemp.push(tempLittle)
+    littlesTemp.unshift(tempLittle)
 
     // Update `this.state.littles` to new instance of array
     this.setState({ littles: littlesTemp })
