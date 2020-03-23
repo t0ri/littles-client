@@ -1,5 +1,5 @@
 # Littles 2.0
 
 todo
-- delete little (hover on LittleItem to display img with delete onClick)
+- fix overflow on scrollbar
 - ESC on modal
