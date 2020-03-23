@@ -27,11 +27,11 @@ export default class LittleItem extends Component {
   render() {
     // Deconstructing `this.props.little` and `this.state`
     const { littleItemHover } = this.state
-    const { little, del } = this.props
+    const { little, del, index } = this.props
     const { type, text } = little
 
     return (
-      <div className="little-item" data-type={type} onClick={this.displayDelete} onKeyDown={this.displayDelete}>
+      <div className="little-item" data-index={index} data-type={type} onClick={this.displayDelete} onKeyDown={this.displayDelete}>
         <p>{text}</p>
         { littleItemHover
           && (

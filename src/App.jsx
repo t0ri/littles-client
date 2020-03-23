@@ -158,9 +158,12 @@ export default class App extends Component {
   }
 
 
-  deleteLittle(index) {
+  deleteLittle(e) {
     // Deconstructing `this.state`
     const { littles } = this.state
+
+    // Navigate DOM from event to get data-index attr value
+    const index = e.target.parentElement.getAttribute('data-index')
 
     // Create new instance of current `this.state.littles` array
     const littlesTemp = []
