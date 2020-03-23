@@ -31,6 +31,7 @@ export default class App extends Component {
     this.getLittlesInTimeFrame = this.getLittlesInTimeFrame.bind(this)
     this.inputLittleStateHandler = this.inputLittleStateHandler.bind(this)
     this.saveNewLittle = this.saveNewLittle.bind(this)
+    this.deleteLittle = this.deleteLittle.bind(this)
   }
 
 
@@ -87,6 +88,7 @@ export default class App extends Component {
     this.getLittlesInTimeFrame()
   }
 
+
   inputLittleStateHandler(e) {
     // Set `this.state.newLittle` to update onChange
     // with event target (text input)
@@ -95,9 +97,16 @@ export default class App extends Component {
     })
   }
 
+
   saveNewLittle(e) {
     // Deconstructing `this.state`
     const { littles, newLittle } = this.state
+
+    // Check if newLittle is empty
+    if (newLittle === '') {
+      this.newLittleModalStateControl()
+      return
+    }
 
     // Create temporary object containing new data
     const tempLittle = {
@@ -118,6 +127,49 @@ export default class App extends Component {
 
     // Delete value from input text box
     e.target.parentElement.firstChild.value = ''
+
+    // Close the <NewLittle /> modal
+    this.newLittleModalStateControl()
+  }
+
+
+  createWelcomeMessage() {
+    // Deconstructing `this.state`
+    const { timeFrame } = this.state
+
+    // Empty variable to hold returned message
+    let message
+
+    switch (timeFrame) {
+      case 'weekly':
+        message = 'here are your week\'s littles'
+        break
+      case 'monthly':
+        message = 'here are your month\'s littles'
+        break
+      case 'yearly':
+        message = 'here are your year\'s littles'
+        break
+      default:
+        message = 'here are your littles'
+    }
+
+    return message
+  }
+
+
+  deleteLittle(index) {
+    // Deconstructing `this.state`
+    const { littles } = this.state
+
+    // Create new instance of current `this.state.littles` array
+    const littlesTemp = []
+    littles.forEach((little) => littlesTemp.push(little))
+
+    // Remove the index passed from <LittleItem />
+    littlesTemp.splice(index, 1)
+
+    this.setState({ littles: littlesTemp })
   }
 
 
@@ -140,49 +192,50 @@ export default class App extends Component {
               {/* Welcome Message */}
               <div id="welcome-container">
                 <h1>Hi Josie,</h1>
-                <h1>here are your week&apos;s littles</h1>
+                <h1>{this.createWelcomeMessage()}</h1>
               </div>
 
               {/* Littles Statistics */}
               <TimelyLittles littles={littles} />
-
-              {/* Left Bottom */}
-              <div id="content-bottom">
-
-                {/* Time Frame Control Buttons */}
-                <button type="button" className="time-frame-btn" id="weekly" onClick={this.timeFrameStateControl}>View Weekly</button>
-                <button type="button" className="time-frame-btn" id="monthly" onClick={this.timeFrameStateControl}>View Monthly</button>
-                <button type="button" className="time-frame-btn" id="yearly" onClick={this.timeFrameStateControl}>View Yearly</button>
-                <button type="button" className="time-frame-btn" id="all" onClick={this.timeFrameStateControl}>View All</button>
-
-                {/* New Little Button */}
-                <button
-                  type="button"
-                  id="new-little-btn"
-                  onClick={this.newLittleModalStateControl}
-                >
-                  +
-                </button>
-              </div>
             </div>
 
-            {/* Right */}
-            <div id="content-right">
-              {/* Littles List */}
-              <LittlesList littles={littles} />
-            </div>
+            {/* Left Bottom */}
+            <div id="content-bottom">
 
-            {/* Modal */}
-            { newLittleOpen
-              && (
-              <NewLittle
-                exit={this.newLittleModalStateControl}
-                save={this.saveNewLittle}
-                onChange={this.inputLittleStateHandler}
-              />
-              )}
+              {/* Time Frame Control Buttons */}
+              <button type="button" className="time-frame-btn" id="weekly" onClick={this.timeFrameStateControl}>View Weekly</button>
+              <button type="button" className="time-frame-btn" id="monthly" onClick={this.timeFrameStateControl}>View Monthly</button>
+              <button type="button" className="time-frame-btn" id="yearly" onClick={this.timeFrameStateControl}>View Yearly</button>
+              <button type="button" className="time-frame-btn" id="all" onClick={this.timeFrameStateControl}>View All</button>
+
+              {/* New Little Button */}
+              <button
+                type="button"
+                id="new-little-btn"
+                onClick={this.newLittleModalStateControl}
+              >
+                +
+              </button>
+            </div>
 
           </div>
+
+          {/* Right */}
+          <div id="content-right">
+            {/* Littles List */}
+            <LittlesList del={this.deleteLittle} littles={littles} />
+          </div>
+
+          {/* Modal */}
+          { newLittleOpen
+            && (
+            <NewLittle
+              exit={this.newLittleModalStateControl}
+              save={this.saveNewLittle}
+              onChange={this.inputLittleStateHandler}
+            />
+            )}
+
         </div>
       </div>
     )

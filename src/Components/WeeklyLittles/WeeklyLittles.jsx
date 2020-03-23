@@ -1,10 +1,11 @@
-/* eslint-disable react/prop-types */
-
 // React Imports
 import React, { Component } from 'react'
 
-// Components
+// Components Imports
 import LittleStat from '../LittleStat/LittleStat'
+
+// Style Imports
+import './timelylittles.scss'
 
 export default class TimelyLittles extends Component {
   render() {

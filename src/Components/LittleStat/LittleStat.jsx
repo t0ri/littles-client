@@ -1,7 +1,8 @@
-/* eslint-disable react/prop-types */
-
 // React Imports
 import React from 'react'
+
+// Style Imports
+import './littlestat.scss'
 
 export default function LittleStat(props) {
   // Deconstructing `props`

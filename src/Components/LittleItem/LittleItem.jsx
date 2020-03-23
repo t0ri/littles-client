@@ -1,14 +1,50 @@
-/* eslint-disable react/prop-types */
-import React from 'react'
+// React Imports
+import React, { Component } from 'react'
 
-export default function LittleItem(props) {
-  // Deconstructing `this.props.little`
-  const { little } = props
-  const { type, text } = little
+// Style Imports
+import './littleitem.scss'
 
-  return (
-    <div className="little-item" data-type={type}>
-      <p>{text}</p>
-    </div>
-  )
+export default class LittleItem extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      littleItemHover: false,
+    }
+
+    this.displayDelete = this.displayDelete.bind(this)
+  }
+
+  displayDelete() {
+    // Update `this.state.littleItemHover` to control delete btn
+    // by toggling boolean `prevState.littleItemHover`
+    this.setState((prevState) => ({
+      littleItemHover: !prevState.littleItemHover,
+    }))
+  }
+
+
+  render() {
+    // Deconstructing `this.props.little` and `this.state`
+    const { littleItemHover } = this.state
+    const { little, del } = this.props
+    const { type, text } = little
+
+    return (
+      <div className="little-item" data-type={type} onClick={this.displayDelete} onKeyDown={this.displayDelete}>
+        <p>{text}</p>
+        { littleItemHover
+          && (
+            <img
+              className="little-delete-hidden"
+              id="little-delete"
+              onClick={del}
+              onKeyDown={del}
+              alt="Delete Little"
+              src="./img/exit.png"
+            />
+          )}
+      </div>
+    )
+  }
 }
