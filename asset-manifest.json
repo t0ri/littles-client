@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/littles-client/static/css/main.6610f63a.chunk.css",
+    "main.js": "/littles-client/static/js/main.8b5c1b2d.chunk.js",
+    "main.js.map": "/littles-client/static/js/main.8b5c1b2d.chunk.js.map",
+    "runtime-main.js": "/littles-client/static/js/runtime-main.1fd88d7b.js",
+    "runtime-main.js.map": "/littles-client/static/js/runtime-main.1fd88d7b.js.map",
+    "static/js/2.9491efa3.chunk.js": "/littles-client/static/js/2.9491efa3.chunk.js",
+    "static/js/2.9491efa3.chunk.js.map": "/littles-client/static/js/2.9491efa3.chunk.js.map",
+    "index.html": "/littles-client/index.html",
+    "precache-manifest.ec7556aff309f1746fc41761a27fc982.js": "/littles-client/precache-manifest.ec7556aff309f1746fc41761a27fc982.js",
+    "service-worker.js": "/littles-client/service-worker.js",
+    "static/css/main.6610f63a.chunk.css.map": "/littles-client/static/css/main.6610f63a.chunk.css.map",
+    "static/js/2.9491efa3.chunk.js.LICENSE.txt": "/littles-client/static/js/2.9491efa3.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1fd88d7b.js",
+    "static/js/2.9491efa3.chunk.js",
+    "static/css/main.6610f63a.chunk.css",
+    "static/js/main.8b5c1b2d.chunk.js"
+  ]
+}
