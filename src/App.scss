@@ -17,7 +17,6 @@ body {
       @include flex-flow(row nowrap);
       @include justify-content(space-between);
 
-
       div#content-left {
         width: 60vw;
       
@@ -66,7 +65,7 @@ body {
             &.time-frame-btn {
               width: 10vw;
               border-radius: 10px;
-              font-size: 1.25em;
+              font-size: 1.1em;
 
               &:hover {
                 transition: all .2s ease;
