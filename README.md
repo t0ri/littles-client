@@ -5,7 +5,7 @@ Littles is a web app for tracking the small wins and nerves in your life. Start 
 
 Littles was a solo-project, developed in seven days during an Intensive Week (one week work sprint) at the Make School Bachelor's in Applied Computer Science program.
 
-![View of Product](https://gyazo.com/0f2f3d6b6bd9953bf9d48cd9b2feee29)
+![View of Product](https://i.gyazo.com/0f2f3d6b6bd9953bf9d48cd9b2feee29.png)
 
 ### TODO
 - ESC on modals
